@@ -1,23 +1,26 @@
-<section class="property-match">
-    <div class="tit">
-        <p>总资产(元){{num}} </p>
-        <h1>{{totalAssets | number :2 }}</h1>
+<section class="dount-chart">
+    <div class="chart-title">
+        <p>{{num}}</p>
     </div>
-    <div class="ux-pos-rel">
-        <div class="figure" id="target">
-            <div class="chart-loading" id="chart-loading"></div>
-            <div class="chart" ng-repeat="p in propertyMatch">
-                <div id="chart-1" class="hold {{p.className}}" style="-webkit-transform:rotate({{p.startPosition-360}}deg);">
-                    <div class="pie {{p.class_bg}}" style="-webkit-transform:rotate({{p.rotateDeg}}deg);"></div>
-                    <div ng-if="p.percent>0.5" class="pie fill {{p.class_bg}}"></div>
+    <div class="chart-container">
+        <div class="chart-loading"></div>
+        <div class="chart-box" id="J_chartBox">
+            <div class="chart-item" ng-repeat="p in propertyMatch">
+                <div class="hold {{p.className}}" style="-webkit-transform:rotate({{p.startPosition-360}}deg);">
+                    <div class="pie {{p.chartItem}}" style="-webkit-transform:rotate({{p.rotateDeg}}deg);"></div>
+                    <div ng-if="p.percent>0.5" class="pie fill {{p.chartItem}}"></div>
                 </div>
             </div>
-            <i class="chart-bg"></i>
         </div>
-        <div class="info {{propertyMatch[num-1].property_font}}">
-            <p><em class="ion-record"></em>{{propertyMatch[num-1].name}}（{{(propertyMatch[num-1].percent?propertyMatch[num-1].percent:0)*100}}%）</p>
+        <div class="chart-inner-ring">{{propertyMatch[num-1].name}}</div>
+    </div>
+    
+    <div class="chart-footer">
+        <div class="info {{propertyMatch[num-1].activeItem}}">
+            <p>{{propertyMatch[num-1].name}}（{{(propertyMatch[num-1].percent?propertyMatch[num-1].percent:0)*100}}%）</p>
             <p>总资产：{{propertyMatch[num-1].amount?propertyMatch[num-1].amount:"0" | number:2}}元</p>
         </div>
     </div>
+   
 </section>
 

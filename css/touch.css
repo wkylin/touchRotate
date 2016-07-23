@@ -1,47 +1,64 @@
 @charset "utf-8";
-.property-match .tit {
-    text-align: center;
-    margin-top: 20px;
+.dount-chart{
+    overflow:hidden;
 }
-
-.property-match .tit p {
+.dount-chart .chart-title {
+    text-align: center;
     color: #999;
     font-size: 18px;
-    margin-bottom: 10px;
+    margin: 20px 0;
 }
 
-.property-match .tit h1 {
-    color: #ef4c3b;
-    font-size: 32px;
+.dount-chart .chart-container {
+    position: relative;
+    margin: 0 auto;
+    width: 200px;
+    height: 200px;
 }
 
-.property-match .figure {
+.dount-chart .chart-box {
     position: relative;
     width: 200px;
     height: 200px;
     margin: 0 auto;
     z-index: 120;
+    overflow: hidden;
 }
 
-/*********资产配比扇形区域开始**********/
-.property-match .figure .chart-loading {
-    width: 200px;
-    height: 200px;
+.dount-chart .chart-loading {
     background: url(../img/blank.gif) no-repeat center center transparent;
     position: absolute;
     left: 0;
     top: 0;
+    right:0;
+    bottom:0;
     z-index: 110;
     border-radius: 100px;
 }
 
-.chart {
+.chart-item {
     position: relative;
     top: 0;
     z-index: 100;
 }
 
-.hold {
+.chart-inner-ring {
+    width: 100px;
+    height: 100px;
+    background-color: #fff;
+    border-radius: 50px;
+    display: block;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin-left:-50px;
+    margin-top:-50px;
+    z-index: 999;
+    text-align:center;
+    line-height:100px;
+}
+
+.dount-chart .hold {
     position: absolute;
     left: 0;
     width: 200px;
@@ -49,7 +66,7 @@
     clip: rect(0px, 200px, 200px, 100px);
 }
 
-.pie {
+.dount-chart .pie {
     position: absolute;
     width: 200px;
     height: 200px;
@@ -59,118 +76,78 @@
     border-radius: 100px;
 }
 
-.hold.gt50 {
+.dount-chart .hold.more-half {
     clip: rect(auto, auto, auto, auto);
 }
 
-.pie.fill {
+.dount-chart .pie.fill {
     -moz-transform: rotate(180deg) !important;
     -webkit-transform: rotate(180deg) !important;
     -o-transform: rotate(180deg) !important;
     transform: rotate(180deg) !important;
 }
 
-.chart_bg_0 {
+.chart-item-0 {
     background-color: #28c8a0 !important;
     border-color: #28c8a0;
 }
 
-.chart_bg_1 {
+.chart-item-1 {
     background-color: #059eec !important;
     border-color: #059eec;
 }
 
-.chart_bg_2 {
+.chart-item-2 {
     background-color: #feba59 !important;
     border-color: #feba59;
 }
 
-.chart_bg_3 {
+.chart-item-3 {
     background-color: #c9c9c9 !important;
     border-color: #c9c9c9;
 }
 
-.chart_bg_4 {
+.chart-item-4 {
     background-color: #e6443c !important;
     border-color: #e6443c;
 }
 
-.chart_bg_5 {
+.chart-item-5 {
     background-color: #826597 !important;
     border-color: #826597;
 }
 
-.property_font_0 {
+.active-item-0 {
     color: #28c8a0 !important
 }
 
-.property_font_1 {
+.active-item-1 {
     color: #059eec !important
 }
 
-.property_font_2 {
+.active-item-2 {
     color: #feba59 !important
 }
 
-.property_font_3 {
+.active-item-3 {
     color: #c9c9c9 !important
 }
 
-.property_font_4 {
+.active-item-4 {
     color: #e6443c !important
 }
 
-.property_font_5 {
+.active-item-5 {
     color: #826597 !important
 }
 
-.chart-bg {
-    width: 100px;
-    height: 100px;
-    background-color: #fff;
-    border-radius: 50px;
-    display: block;
-    position: absolute;
-    top: 50px;
-    left: 50px;
-    z-index: 999;
-}
 
-/*********资产配比扇形区域结束**********/
-
-.property-match .figure img {
-    width: 80%;
-    display: block;
-    margin: 0 auto;
-}
-
-.ux-pos-rel {
-    position: relative;
-}
-
-.property-match .match-img2 {
-    /*width:8%;*/
-    height: 25%;
-    position: absolute;
-    top: 58%;
-    left: 48%;
-    z-index: 999;
-}
-
-.property-match .info {
+.dount-chart .info {
     margin-top: 40px;
     text-align: center;
 }
 
-.property-match .info h5 {
-    font-size: 18px;
-}
-
-.property-match .info p {
+.dount-chart .info p {
     font-size: 17px;
     margin-top: 10px;
-}
-
-.property-match .info em {
-    margin-right: 8px;
 }
