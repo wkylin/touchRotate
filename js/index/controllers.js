@@ -4,11 +4,14 @@
         .controller("matchCtrl", function ($rootScope, $scope) {
             $scope.num = 1;
             var list = [
-                {"name": "白银", "percent": 0.7333, "amount": 3000},
-                {"name": "黄金", "percent": 0.1333, "amount": 3000},
-                {"name": "青铜", "percent": 0.1333, "amount": 3000}
-                
+                {"name": "白银", "percent": 0.20, "amount": 3000},
+                {"name": "白银", "percent": 0.20, "amount": 3000},
+                {"name": "白银", "percent": 0.20, "amount": 3000},
+                {"name": "白银", "percent": 0.20, "amount": 3000},
+                {"name": "白银", "percent": 0.20, "amount": 3000}
+   
             ];
+            $scope.arrSize= list.length;
             $scope.propertyMatch = list;
             $scope.initFn = function () {
                 for (var i = 1; i < list.length; i++) {
